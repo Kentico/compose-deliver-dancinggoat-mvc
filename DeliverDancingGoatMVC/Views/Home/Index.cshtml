@@ -1,4 +1,5 @@
-﻿@model KenticoCloud.Deliver.ContentItem
+﻿@using Compose
+@model KenticoCloud.Deliver.ContentItem
 
 @{
     ViewBag.Title = Resources.DancingGoat.Home;
@@ -23,6 +24,8 @@
         @Html.Raw(@heroUnit.GetString("marketing_message"))
     </div>
 </section>
+
+@Html.EditableArea("Test")
 
 <div class="row">
     <h1 class="title-tab">@Resources.DancingGoat.Articles_LatestOne</h1>
@@ -76,6 +79,8 @@
         }
     }
 </div>
+
+@Html.EditableArea("Test2")
 
 @MoreButton(Resources.DancingGoat.Articles_More, Url.Action("Index", "Articles"))
 
