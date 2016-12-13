@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace Compose
+namespace KenticoCloud.Compose
 {
     public static class ComposeHtmlHelperExtensions
     {

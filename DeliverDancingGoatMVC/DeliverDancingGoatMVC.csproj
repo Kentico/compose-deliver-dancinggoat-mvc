@@ -167,7 +167,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Compose\ComposeHtmlHelperExtensions.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\CafesController.cs" />
     <Compile Include="Controllers\BrewersController.cs" />
@@ -175,6 +174,7 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CustomWidgetController.cs" />
+    <Compile Include="Controllers\LandingPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -263,6 +263,7 @@
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\CustomWidget\Default.cshtml" />
+    <Content Include="Views\LandingPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -277,6 +278,12 @@
       <LastGenOutput>DancingGoat.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KenticoCloud.Compose\KenticoCloud.Compose.csproj">
+      <Project>{7ba4459e-1cca-4bd2-93f0-217d2607ea94}</Project>
+      <Name>KenticoCloud.Compose</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
