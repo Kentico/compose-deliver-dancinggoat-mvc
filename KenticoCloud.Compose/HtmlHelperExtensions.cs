@@ -13,16 +13,17 @@ namespace KenticoCloud.Compose
     {
         private static HttpClient httpClient = new HttpClient();
 
-        private readonly static int TIMEOUT = 30;
         private readonly static string ENDPOINT = ConfigurationManager.AppSettings["ComposeEndpoint"] ?? "http://localhost:59691/";
-        
 
-        public static async Task<HtmlString> EditableAreaAsync(this HtmlHelper helper, string id)
+        private readonly static Guid PROJECT_ID = new Guid(ConfigurationManager.AppSettings["ComposeProjectId"] ?? "85e06f31-6a8f-405c-ba9c-dc7aed4ed373");
+
+
+        public static async Task<HtmlString> EditableAreaAsync(this HtmlHelper helper, string areaId)
         {
             var scripts = Scripts.Render(ENDPOINT + "compose.js");
 
-            var url = ENDPOINT + "WidgetManager/Zone?design=1&location=data:" + id;
-            var ct = new CancellationTokenSource(TIMEOUT * 1000).Token;
+            var url = ENDPOINT + $"widgets/zone?design=1&location={PROJECT_ID}:{areaId}";
+            var ct = helper.ViewContext.HttpContext.Request.TimedOutToken;
 
             try
             {
@@ -38,9 +39,9 @@ namespace KenticoCloud.Compose
         }
 
 
-        public static HtmlString EditableArea(this HtmlHelper helper, string id)
+        public static HtmlString EditableArea(this HtmlHelper helper, string areaId)
         {
-            return helper.EditableAreaAsync(id).Result;
+            return helper.EditableAreaAsync(areaId).Result;
         }
     }
 }
