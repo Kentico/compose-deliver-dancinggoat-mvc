@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Net;
+using System.Linq;
 
 using KenticoCloud.Deliver;
 
@@ -9,22 +10,36 @@ namespace DeliverDancingGoatMVC.Controllers
 {
     public class LandingPageController : AsyncController
     {
-        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"]);
+        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
 
-        [Route("{id}")]
-        public async Task<ActionResult> Index(string id)
+        public async Task<ActionResult> View(string urlSlug)
         {
+            if (urlSlug == null)
+            {
+                return Redirect("/");
+            }
+
             try
             {
-                var response = await client.GetItemAsync(id, new[] { new EqualsFilter("system.type", "landing_page") });
+                var response = 
+                    await client.GetItemsAsync(new[] {
+                        new EqualsFilter("system.type", "landing_page"),
+                        new EqualsFilter("elements.url_slug", urlSlug)
+                    });
 
-                return View(response.Item);
+                var item = response.Items.FirstOrDefault();
+                if (item == null)
+                {
+                    return Redirect("/");
+                }
+
+                return View(item);
             }
             catch (DeliverException ex)
             {
                 if (ex.StatusCode == HttpStatusCode.NotFound)
                 {
-                    return HttpNotFound();
+                    return Redirect("/");
                 }
 
                 throw;

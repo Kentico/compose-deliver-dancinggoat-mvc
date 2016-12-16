@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace DeliverDancingGoatMVC
@@ -14,6 +10,12 @@ namespace DeliverDancingGoatMVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+                name: "Landing page",
+                url: "{urlslug}",
+                defaults: new { controller = "LandingPage", action = "View" }
+            );
 
             routes.MapRoute(
                 name: "Default",

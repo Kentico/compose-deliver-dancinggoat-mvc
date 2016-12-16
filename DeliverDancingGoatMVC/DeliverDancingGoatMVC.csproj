@@ -263,7 +263,7 @@
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\CustomWidget\Default.cshtml" />
-    <Content Include="Views\LandingPage\Index.cshtml" />
+    <Content Include="Views\LandingPage\View.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
