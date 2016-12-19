@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -22,7 +21,7 @@ namespace KenticoCloud.Compose
         {
             var scripts = Scripts.Render(ENDPOINT + "compose.js");
 
-            var url = ENDPOINT + $"widgets/zone?design=1&location={PROJECT_ID}:{areaId}";
+            var url = ENDPOINT + $"widgets/editablearea?location={PROJECT_ID}:{areaId}";
             var ct = helper.ViewContext.HttpContext.Request.TimedOutToken;
 
             try
