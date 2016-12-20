@@ -1,3 +1,14 @@
+strong
+{
+    color: red;
+}
+
+em
+{
+    color: silver;
+    text-decoration: underline;
+}
+
 @font-face {
   font-family: 'PT Serif';
   font-style: normal;
