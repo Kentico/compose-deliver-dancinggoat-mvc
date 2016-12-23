@@ -24,7 +24,7 @@ namespace DeliverDancingGoatMVC.Controllers
                 var response = 
                     await client.GetItemsAsync(new[] {
                         new EqualsFilter("system.type", "landing_page"),
-                        new EqualsFilter("elements.url_slug", urlSlug)
+                        new EqualsFilter("elements.url", urlSlug)
                     });
 
                 var item = response.Items.FirstOrDefault();
