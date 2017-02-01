@@ -12,7 +12,20 @@ namespace DeliverDancingGoatMVC.Controllers
     {
         private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
 
+
+        public async Task<ActionResult> Empty(string urlSlug)
+        {
+            return await ShowPage(urlSlug, "empty_page", "Empty");
+        }
+
+
         public async Task<ActionResult> View(string urlSlug)
+        {
+            return await ShowPage(urlSlug, "landing_page");
+        }
+
+
+        private async Task<ActionResult> ShowPage(string urlSlug, string type, string viewName = null)
         {
             if (urlSlug == null)
             {
@@ -21,9 +34,9 @@ namespace DeliverDancingGoatMVC.Controllers
 
             try
             {
-                var response = 
+                var response =
                     await client.GetItemsAsync(new[] {
-                        new EqualsFilter("system.type", "landing_page"),
+                        new EqualsFilter("system.type", type),
                         new EqualsFilter("elements.url", urlSlug)
                     });
 
@@ -33,7 +46,7 @@ namespace DeliverDancingGoatMVC.Controllers
                     return Redirect("/");
                 }
 
-                return View(item);
+                return View(viewName, item);
             }
             catch (DeliverException ex)
             {

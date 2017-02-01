@@ -264,6 +264,8 @@
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\CustomWidget\Default.cshtml" />
     <Content Include="Views\LandingPage\View.cshtml" />
+    <Content Include="Views\LandingPage\Empty.cshtml" />
+    <Content Include="Views\Shared\_EmptyLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
