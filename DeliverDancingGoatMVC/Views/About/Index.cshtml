@@ -1,4 +1,5 @@
-﻿@model KenticoCloud.Deliver.ContentItem
+﻿@using KenticoCloud.Compose
+@model KenticoCloud.Deliver.ContentItem
 
 @{
     ViewBag.Title = Resources.DancingGoat.AboutUs;
@@ -33,3 +34,7 @@
         }
     </section>
 }
+
+<div class="row">
+    @Html.EditableArea("AboutUsEditableArea", Model.System.Id)
+</div>
