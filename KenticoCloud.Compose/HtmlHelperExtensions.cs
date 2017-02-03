@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -10,11 +11,45 @@ namespace KenticoCloud.Compose
 {
     public static class ComposeHtmlHelperExtensions
     {
-        private static HttpClient httpClient = new HttpClient();
+        private static HttpClient httpClient;
 
-        private readonly static string ENDPOINT = ConfigurationManager.AppSettings["ComposeEndpoint"] ?? "http://localhost:59691/";
+        private readonly static string ENDPOINT;
 
-        private readonly static Guid PROJECT_ID = new Guid(ConfigurationManager.AppSettings["ComposeProjectId"] ?? "85e06f31-6a8f-405c-ba9c-dc7aed4ed373");
+        private readonly static Guid PROJECT_ID;
+        private readonly static string PREVIEW_TOKEN;
+
+
+        static ComposeHtmlHelperExtensions()
+        {
+            PROJECT_ID = GetProjectId();
+            PREVIEW_TOKEN = ConfigurationManager.AppSettings["PreviewToken"];
+            ENDPOINT = ConfigurationManager.AppSettings["ComposeEndpoint"] ?? "http://localhost:59691/";
+            httpClient = CreateHttpClient();
+        }
+
+
+        private static HttpClient CreateHttpClient()
+        {
+            var http = new HttpClient();
+
+            if (!String.IsNullOrEmpty(PREVIEW_TOKEN))
+            {
+                http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", PREVIEW_TOKEN);
+            }
+
+            return http;
+        }
+
+
+        private static Guid GetProjectId()
+        {
+            var id = ConfigurationManager.AppSettings["ProjectId"];
+            Guid projectId;
+
+            Guid.TryParse(id, out projectId);
+
+            return projectId;
+        }
 
 
         public static async Task<HtmlString> EditableAreaAsync(this HtmlHelper helper, string areaId, string itemId)
