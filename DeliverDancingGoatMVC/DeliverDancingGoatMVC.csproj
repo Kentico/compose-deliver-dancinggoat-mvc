@@ -265,6 +265,7 @@
     <Content Include="Views\LandingPage\View.cshtml" />
     <Content Include="Views\LandingPage\Empty.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
+    <Content Include="WidgetsConfiguration\LatestBlogPosts.json" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
