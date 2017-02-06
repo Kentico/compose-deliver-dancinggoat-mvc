@@ -16,9 +16,8 @@ namespace DeliverDancingGoatMVC.Controllers
         private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"]);
 
         [Route("Widgets/LatestBlogPostsWidget")]
-        public async Task<ActionResult> Default(string properties)
+        public async Task<ActionResult> Default()
         {
-            var props = JObject.Parse(properties);
             var filters = new List<IFilter> {
                 new EqualsFilter("system.type", "article"),
                 new Order(ORDER_ELEMENT, ORDER_DIRECTION),
