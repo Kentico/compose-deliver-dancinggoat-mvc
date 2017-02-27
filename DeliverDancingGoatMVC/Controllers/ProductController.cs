@@ -14,7 +14,7 @@ namespace DeliverDancingGoatMVC.Controllers
     [RoutePrefix("products")]
     public class ProductController : AsyncController
     {
-        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"]);
+        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
 
         [Route("{id}")]
         public async Task<ActionResult> Detail(string id)

@@ -13,7 +13,7 @@ namespace DeliverDancingGoatMVC.Controllers
         private const string ORDER_ELEMENT = "elements.post_date";
         private const OrderDirection ORDER_DIRECTION = OrderDirection.Descending;
 
-        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"]);
+        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
 
         [Route("Widgets/LatestBlogPostsWidget")]
         public async Task<ActionResult> Default()

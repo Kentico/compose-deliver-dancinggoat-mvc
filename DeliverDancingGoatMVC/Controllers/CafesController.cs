@@ -14,7 +14,7 @@ namespace DeliverDancingGoatMVC.Controllers
     [RoutePrefix("cafes")]
     public class CafesController : AsyncController
     {
-        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"]);
+        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
 
         [Route]
         public async Task<ActionResult> Index()
