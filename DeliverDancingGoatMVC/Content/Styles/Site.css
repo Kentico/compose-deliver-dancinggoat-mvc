@@ -1,15 +1,4 @@
-strong
-{
-    color: red;
-}
-
-em
-{
-    color: silver;
-    text-decoration: underline;
-}
-
-@font-face {
+﻿@font-face {
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: 700;
@@ -5138,6 +5127,9 @@ dd.product-price--retail {
 .icon-me-exception:before {
   content: "\e693";
 }
+.widgets-toolbar .toolbar-widget.widget-type-latestblogposts:before {
+  content: "\e710";
+}
 .icon-crosshair {
   position: relative;
   display: inline-block;
@@ -5794,6 +5786,48 @@ footer {
 }
 .banner-text p {
   margin: 0;
+}
+/*# Landing page*/
+.landing-page p,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4,
+.landing-page form,
+.landing-page ul,
+.landing-page li {
+  text-align: center;
+}
+.landing-page .banner-text {
+  max-width: 16rem;
+}
+.landing-page .banner-section {
+  padding-top: 16.5rem;
+}
+.landing-page .teaser {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.landing-page .steps {
+  background-color: #f0f0f0;
+  border-top: 2px solid #BA5455;
+  border-bottom: 2px solid #BA5455;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.landing-page .steps img {
+  padding: 1rem 6rem 1rem 6rem;
+}
+.landing-page .lectors {
+  border-bottom: 2px solid #BA5455;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.landing-page .lectors img {
+  padding: 0.5rem 11rem 0.5rem 11rem;
+}
+.landing-page .contacts {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 /*# Our story #*/
 .ourstory-section {
