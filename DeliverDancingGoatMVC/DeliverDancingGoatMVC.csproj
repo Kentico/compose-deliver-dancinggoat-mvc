@@ -176,7 +176,6 @@
     <Compile Include="Controllers\ContactUsWidgetController.cs" />
     <Compile Include="Controllers\LandingPageController.cs" />
     <Compile Include="Controllers\LatestBlogPostsWidgetController.cs" />
-    <Compile Include="Controllers\CoffeeBrewerySeminarsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,16 +265,13 @@
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\LatestBlogPostsWidget\Default.cshtml" />
-    <Content Include="Views\CoffeeBrewerySeminars\Index.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
     <Content Include="WidgetsConfiguration\LatestBlogPosts.json" />
     <Content Include="Views\ContactUsWidget\Default.cshtml" />
     <Content Include="Views\LandingPage\View.cshtml" />
     <Content Include="Views\LandingPage\Empty.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\ContactUs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

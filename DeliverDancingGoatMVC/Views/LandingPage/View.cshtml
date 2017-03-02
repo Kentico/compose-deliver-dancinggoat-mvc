@@ -1,6 +1,34 @@
 ﻿@using KenticoCloud.Compose
 @model KenticoCloud.Deliver.ContentItem
+
 @{
     ViewBag.Title = Model.System.Name;
+    ViewBag.PageType = "LandingPage";
 }
-@Html.EditableArea("LandingPageContent", Model.System.Id)
+
+<div class="landing-page">
+    <div class="container">
+        <section class="banner-section" style="background-image: url('@Model.GetAssets("image")[0].Url');">
+            <div class="banner-text">
+                @Html.Raw(Model.GetString("title"))
+            </div>
+        </section>
+    </div>
+    <div class="container landing-page--container">
+        @Html.EditableArea("LandingPageTeaser", Model.System.Id)
+    </div>
+    <div class="steps">
+        <div class="container landing-page--container">
+            @Html.EditableArea("LandingPageSteps", Model.System.Id)
+        </div>
+    </div>
+    <div class="lectors">
+        <div class="container landing-page--container">
+            @Html.EditableArea("LandingPageLectors", Model.System.Id)
+        </div>
+    </div>
+    <div class="container landing-page--container">
+        @Html.EditableArea("LandingPageContacts", Model.System.Id)
+    </div>
+</div>
+

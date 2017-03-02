@@ -444,8 +444,18 @@ footer {
 
 /*# Landing page*/
 .landing-page {
-    p, h2, h3, h4, form, ul, li {
+    &--container {
+	    padding-top: 3em;
+	    padding-bottom: 3em;
+    }
+
+    p, h1, h2, h3, h4, form, ul, li {
         text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+	    margin-bottom: 1em;
     }
 
     .banner-text {
@@ -453,37 +463,23 @@ footer {
     }
 
     .banner-section {
+        margin-bottom: 0px;
         padding-top: 16.5rem;
     }
 
-    .teaser {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
 
     .steps {
-        background-color: #f0f0f0;
-        border-top: 2px solid #BA5455; 
-        border-bottom: 2px solid #BA5455;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        img {
-            padding: 1rem 6rem 1rem 6rem;
+        background-color: #fff7f7;
+        .widgets-widget img {
+            max-width: 160px;
         }
     }
 
     .lectors {
-        border-bottom: 2px solid #BA5455;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        img {
-            padding: 0.5rem 11rem 0.5rem 11rem;
+        border-bottom: 1px solid #f1d3d3;
+        .widgets-widget img {
+            max-width: 200px;
         }
-    }
-
-    .contacts {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
     }
 }
 
