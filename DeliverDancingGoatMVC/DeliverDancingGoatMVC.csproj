@@ -270,6 +270,7 @@
     <Content Include="Views\ContactUsWidget\Default.cshtml" />
     <Content Include="Views\LandingPage\View.cshtml" />
     <Content Include="Views\LandingPage\Empty.cshtml" />
+    <Content Include="WidgetsConfiguration\ContactUs.json" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
