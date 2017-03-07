@@ -4,11 +4,13 @@
 @{
     ViewBag.Title = Model.System.Name;
     ViewBag.PageType = "LandingPage";
+
+    var bannerUrl = Model.GetAssets("image").FirstOrDefault()?.Url;
 }
 
 <div class="landing-page">
     <div class="container">
-        <section class="banner-section" style="background-image: url('@Model.GetAssets("image")[0].Url');">
+        <section class="banner-section" style="background-image: url('@bannerUrl');">
             <div class="banner-text">
                 @Html.Raw(Model.GetString("title"))
             </div>
