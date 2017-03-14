@@ -13,7 +13,9 @@
     <div class="container">
         <section class="banner-section" style="background-image: url('@bannerUrl');">
             <div class="banner-text">
-                @Html.Raw(Model.GetString("title"))
+                <p>
+                    @Model.GetString("title")
+                </p>
             </div>
         </section>
     </div>

@@ -26,8 +26,6 @@
     </div>
 </section>
 
-@Html.Kentico().EditableArea("TopArea", Model.System.Id)
-
 <div class="row">
     <h1 class="title-tab">@Resources.DancingGoat.Articles_LatestOne</h1>
     @{var isFirstArticle = true; }
@@ -80,8 +78,6 @@
         }
     }
 </div>
-
-@Html.Kentico().EditableArea("BottomArea", Model.System.Id)
 
 @MoreButton(Resources.DancingGoat.Articles_More, Url.Action("Index", "Articles"))
 

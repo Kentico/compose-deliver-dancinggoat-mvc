@@ -21,6 +21,9 @@
             @Html.Raw(@Model.GetString("body_copy"))
         </div>
     </div>
+    <div class="row">
+        @Html.EditableArea("ArticleContent", Model.System.Id)
+    </div>
 </article>
 @if (relatedArticles.Any())
 {
@@ -51,6 +54,3 @@
         </div>
     </div>
 }
-<div class="col-lg-12 col-md-12">
-    @Html.Kentico().EditableArea("ArticleContent", Model.System.Id)
-</div>
