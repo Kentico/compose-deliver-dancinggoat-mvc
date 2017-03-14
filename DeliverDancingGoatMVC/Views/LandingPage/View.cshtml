@@ -1,4 +1,5 @@
-﻿@using KenticoCloud.Compose
+﻿@using KenticoCloud
+@using KenticoCloud.Compose
 @model KenticoCloud.Deliver.ContentItem
 
 @{
@@ -17,20 +18,20 @@
         </section>
     </div>
     <div class="container landing-page--container">
-        @Html.EditableArea("LandingPageTeaser", Model.System.Id)
+        @Html.Kentico().EditableArea("LandingPageTeaser", Model.System.Id)
     </div>
     <div class="steps">
         <div class="container landing-page--container">
-            @Html.EditableArea("LandingPageSteps", Model.System.Id)
+            @Html.Kentico().EditableArea("LandingPageSteps", Model.System.Id)
         </div>
     </div>
     <div class="lectors">
         <div class="container landing-page--container">
-            @Html.EditableArea("LandingPageLectors", Model.System.Id)
+            @Html.Kentico().EditableArea("LandingPageLectors", Model.System.Id)
         </div>
     </div>
     <div class="container landing-page--container">
-        @Html.EditableArea("LandingPageContacts", Model.System.Id)
+        @Html.Kentico().EditableArea("LandingPageContacts", Model.System.Id)
     </div>
 </div>
 

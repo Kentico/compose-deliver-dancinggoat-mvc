@@ -1,4 +1,5 @@
 ﻿@using KenticoCloud.Compose
+@using KenticoCloud
 @model KenticoCloud.Deliver.ContentItem
 
 @{
@@ -36,5 +37,7 @@
 }
 
 <div class="row">
-    @Html.EditableArea("AboutUsEditableArea", Model.System.Id)
+    @Html.Kentico().EditableArea("AboutUsEditableArea", Model.System.Id)
+
+
 </div>
