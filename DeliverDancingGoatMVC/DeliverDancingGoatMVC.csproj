@@ -51,7 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="KenticoCloud.Compose, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\KenticoCloud.Compose.0.9.10\lib\net461\KenticoCloud.Compose.dll</HintPath>
+      <HintPath>..\packages\KenticoCloud.Compose.0.9.15\lib\net461\KenticoCloud.Compose.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="KenticoCloud.Deliver, Version=1.0.1.102, Culture=neutral, processorArchitecture=MSIL">
