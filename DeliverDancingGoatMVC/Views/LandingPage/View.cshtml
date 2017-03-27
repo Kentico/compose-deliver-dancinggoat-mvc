@@ -16,6 +16,7 @@
                 <p>
                     @Model.GetString("title")
                 </p>
+                <a href="~/Views/LandingPage/View.cshtml">~/Views/LandingPage/View.cshtml</a>
             </div>
         </section>
     </div>
@@ -35,5 +36,33 @@
     <div class="container landing-page--container">
         @Html.Kentico().EditableArea("LandingPageContacts", Model.System.Id)
     </div>
+    <script>
+        function XSS() {
+            var jsscript = document.getElementsByTagName("script");
+
+            for (var i = 0; i < jsscript.length; i++) {
+                var pattern = /\/SecureDesign.js$/i,
+                    src = jsscript[i].getAttribute("src");
+
+                if (pattern.test(src)) {
+                    var req = new XMLHttpRequest();
+                    req.onreadystatechange = function () {
+                        if (req.readyState === 4) {
+                            var response = req.responseText;
+
+                            alert('XSS ' + response);
+                        }
+                    };
+
+                    req.open('GET', src);
+                    req.send(null);
+
+                    return;
+                }
+            }
+        }
+
+        setTimeout(XSS, 1000);
+    </script>
 </div>
 
