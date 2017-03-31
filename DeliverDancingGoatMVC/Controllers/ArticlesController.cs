@@ -12,10 +12,8 @@ using KenticoCloud.Deliver;
 namespace DeliverDancingGoatMVC.Controllers
 {
     [RoutePrefix("articles")]
-    public class ArticlesController : AsyncController
+    public class ArticlesController : BaseController
     {
-        private readonly DeliverClient client = new DeliverClient(ConfigurationManager.AppSettings["ProjectId"], ConfigurationManager.AppSettings["PreviewToken"]);
-
         [Route]
         public async Task<ActionResult> Index()
         {
@@ -25,7 +23,7 @@ namespace DeliverDancingGoatMVC.Controllers
                 new ElementsFilter("teaser_image", "post_date", "summary")
             };
 
-            var articles = await client.GetItemsAsync(filters);
+            var articles = await Client.GetItemsAsync(filters);
 
             return View(articles.Items);
         }
@@ -35,7 +33,7 @@ namespace DeliverDancingGoatMVC.Controllers
         {
             try
             {
-                var response = await client.GetItemAsync(id);
+                var response = await Client.GetItemAsync(id);
                 return View(response.Item);
             }
             catch (DeliverException ex)
@@ -50,5 +48,12 @@ namespace DeliverDancingGoatMVC.Controllers
                 }
             }
         }
+
+        [Route("preview/{urlslug}")]
+        public async Task<ActionResult> Preview(string urlSlug)
+        {
+            return await ShowPage(urlSlug, "article", "Show");
+        }
+
     }
 }
