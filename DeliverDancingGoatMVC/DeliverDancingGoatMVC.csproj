@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressSSLPort>44343</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -244,15 +244,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.Default.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Default.Debug.config">
-      <DependentUpon>Web.Default.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Default.Release.config">
-      <DependentUpon>Web.Default.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -275,6 +266,10 @@
     <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\LatestBlogPostsWidget\Default.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
+    <None Include="Web.Default.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <Content Include="WidgetsConfiguration\LatestBlogPosts.json" />
     <Content Include="Views\ContactUsWidget\Default.cshtml" />
     <Content Include="Views\LandingPage\View.cshtml" />
@@ -344,7 +339,7 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets. -->
   <Target Name="BeforeBuild">
-    <TransformXml Source="Web.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
+    <TransformXml Source="Web.Default.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
   </Target>
   <Target Name="AfterBuild">
   </Target>
