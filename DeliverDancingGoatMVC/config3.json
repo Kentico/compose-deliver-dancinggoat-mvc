@@ -1,0 +1,5 @@
+﻿{
+  "display_name": "test MartinH 2",
+  "code_name": "LatestBlogPosts3",
+  "endpoint_url":  "http://localhost:60473/Widgets/LatestBlogPostsWidget" 
+}
