@@ -225,8 +225,6 @@
     <Content Include="Content\Styles\variables.less" />
     <Content Include="Content\Styles\YourAccount.less" />
     <Content Include="package.json" />
-    <None Include="Properties\PublishProfiles\composedancinggoat - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\composedancinggoat - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\formAutoPost.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
