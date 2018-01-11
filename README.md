@@ -1,3 +1,5 @@
+** This repository contains Kentico's internal code that is of no use to the general public. Please explore our [other repositories](https://github.com/Kentico).**
+
 # Deliver Dancing Goat .NET MVC 5 sample application
 
 ## SUMMARY
